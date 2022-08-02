@@ -37,7 +37,7 @@ def find_shortest_path(grid):
                 start.col = col
                 break
 
-    # To maintain location visit status first assign "False" to all cells in the grid
+    # To maintain location "visit" status, assign "False" to all cells in the grid
     visited = [[False for i in range(len(grid[0]))]
                for i in range(len(grid))]
 
@@ -49,7 +49,7 @@ def find_shortest_path(grid):
 
     while len(queue) != 0:
 
-        # changing the starting point to whatever is at the beginning of the queue:
+        # changing the starting point to the element at the beginning of the queue:
         start = queue.pop(0)
         # If destination found we should return the route:
         if grid[start.row][start.col] == 'B':
