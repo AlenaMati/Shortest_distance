@@ -1,9 +1,3 @@
-# Store each cell as a node with their row, column values and distance from source cell.
-# Start BFS with source cell.
-# Make a visited array with all having “false” values except cells which are assigned “true” values as they can not be traversed.
-# Keep updating distance from source value in each move.
-# Return distance when destination is met, else return "no path exists".
-
 class QueueItem:
     def __init__(self, row, col, dist, route):
         self.row = row
@@ -23,10 +17,6 @@ class QueueItem:
     def go_right(self):
         self.route.append('right')
 
-    # getting an error about this one:
-    # def __repr__(self):
-    #     return self.route
-
 
 grid = [[False, False, False, 'B', True, False],
         [True, False, False, False, True, False],
@@ -39,7 +29,7 @@ grid = [[False, False, False, 'B', True, False],
 def find_shortest_path(grid):
     start = QueueItem(0, 0, 0, [])
 
-    # Finding the source to start from:
+    
     for row in range(len(grid)):
         for col in range(len(grid[row])):
             if grid[row][col] == 'A':
